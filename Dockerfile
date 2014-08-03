@@ -1,6 +1,6 @@
 #
 # RabbitMQ ready for clustering using FQDN's
-# version: 1.0.0
+# version: 1.0.1
 #
 
 FROM ubuntu:14.04
