@@ -1,6 +1,6 @@
 #
 # RabbitMQ ready for clustering using FQDN's
-# version: 1.0.1
+# version: 1.0.2
 #
 
 FROM ubuntu:14.04
@@ -19,8 +19,8 @@ RUN /usr/sbin/rabbitmq-plugins enable rabbitmq_management
 RUN echo "rmqcookie" > /var/lib/rabbitmq/.erlang.cookie && chown rabbitmq:rabbitmq /var/lib/rabbitmq/.erlang.cookie && chmod 0600 /var/lib/rabbitmq/.erlang.cookie
 
 # change erlang arg -sname to -name, which switches from short names to FQDN for erlang networking
-RUN sed -ri 's/-sname \$\{RABBIT/-name \$\{RABBIT/' /usr/lib/rabbitmq/bin/rabbitmq-server
-RUN sed -ri 's/-sname/-name/' /usr/lib/rabbitmq/bin/rabbitmqctl
+#RUN sed -ri 's/-sname \$\{RABBIT/-name \$\{RABBIT/' /usr/lib/rabbitmq/bin/rabbitmq-server
+#RUN sed -ri 's/-sname/-name/' /usr/lib/rabbitmq/bin/rabbitmqctl
 
 CMD ["/usr/sbin/rabbitmq-server"]
 
