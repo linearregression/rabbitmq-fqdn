@@ -15,6 +15,11 @@ RUN alias adduser='useradd' && DEBIAN_FRONTEND=noninteractive apt-get install -y
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN /usr/sbin/rabbitmq-plugins enable rabbitmq_management
+RUN /usr/sbin/rabbitmq-plugins enable rabbitmq_management_visualiser
+RUN /usr/sbin/rabbitmq-plugins enable rabbitmq_management_agent
+RUN /usr/sbin/rabbitmq-plugins enable rabbitmq_consistent_hash_exchange
+RUN /usr/sbin/rabbitmq-plugins enable rabbit_federation
+RUN /usr/sbin/rabbitmq-plugins enable rabbit_federation_management
 
 RUN echo "rmqcookie" > /var/lib/rabbitmq/.erlang.cookie && chown rabbitmq:rabbitmq /var/lib/rabbitmq/.erlang.cookie && chmod 0600 /var/lib/rabbitmq/.erlang.cookie
 
