@@ -1,10 +1,10 @@
 rabbitmq-fqdn
 =============
 
-RabbitMQ dockerfile
+RabbitMQ for clustering using FQDNs
 
 * Sets a consistent erlang cookie to make clustering possible
-* Modifies rabbitmq-server and rabbitmqctl scripts to change erlange -sname arg to -name, this enables FQDN support
+* Modifies rabbitmq-server and rabbitmqctl scripts to change erlang -sname arg to -name, this enables FQDN support
 
 
 
